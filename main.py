@@ -10,7 +10,8 @@ queue = Queue()
 
 # Ask user for a URL to crawl
 def ask_for_url():
-    return input("Enter url to crawl: ")
+    url = input("Enter url to crawl: ")
+    return sanitize_url(url)
 
 
 # Ask user what they want to do

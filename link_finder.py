@@ -21,4 +21,4 @@ class Linkfinder(HTMLParser):
         return self.links
 
     def error(self, message):
-        pass
+        print('hello'+message)

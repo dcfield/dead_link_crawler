@@ -61,6 +61,7 @@ def set_to_file(links, file):
             f.write(l + "\n")
 
 
+# Check is file empty
 def file_is_empty(file):
     with open(file) as f:
         if len(f.read()) > 0:
@@ -68,5 +69,13 @@ def file_is_empty(file):
     return True
 
 
+# Check does file exist
 def file_exists(file):
     return os.path.isfile(file)
+
+
+# Sanitize the URL
+def sanitize_url(url):
+    if url.startswith("http://") or url.startswith("https://"):
+        return url
+    return "http://" + url
