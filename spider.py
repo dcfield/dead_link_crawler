@@ -2,6 +2,7 @@ from urllib.request import urlopen
 from link_finder import Linkfinder
 from general import *
 from domain import *
+from urllib import error
 
 
 class Spider:
@@ -69,13 +70,19 @@ class Spider:
             # Get all links
             finder = Linkfinder(Spider.base_url, page_url)
             finder.feed(html_string)
-        except Exception as e:
-            if e.getcode() == 404:
+
+        except error.HTTPError as e_http:
+            if e_http.getcode() == 404:
                 Spider.dead_set.add(page_url)
                 print('Dead link: ' + page_url)
             else:
-                print(str(e))
+                print(str(e_http))
             return set()
+
+        except Exception as e:
+            print(str(e))
+            return set()
+
         return finder.page_links()
 
     @staticmethod
