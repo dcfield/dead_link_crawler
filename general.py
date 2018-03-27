@@ -59,3 +59,14 @@ def set_to_file(links, file):
     with open(file, "w") as f:
         for l in sorted(links):
             f.write(l + "\n")
+
+
+def file_is_empty(file):
+    with open(file) as f:
+        if len(f.read()) > 0:
+            return False
+    return True
+
+
+def file_exists(file):
+    return os.path.isfile(file)

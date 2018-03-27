@@ -3,18 +3,32 @@ from queue import Queue
 from spider import Spider
 from domain import *
 from general import *
-import sys
-
-# constants
-PROJECT_NAME = 'dead_link_crawler_files'
-HOMEPAGE = input("Enter url: ") or 'http://www.pythonanywhere.com/'
-DOMAIN_NAME = get_domain_name(HOMEPAGE)
-QUEUE_FILE = PROJECT_NAME + '/queue.txt'
-CRAWLED_FILE = PROJECT_NAME + '/crawled.txt'
-NUMBER_OF_THREADS = 4
+from constants import *
+import shutil
 
 queue = Queue()
 
+# Ask user for a URL to crawl
+def ask_for_url():
+    return input("Enter url to crawl: ")
+
+
+# Ask user what they want to do
+def ask_for_input():
+    if not file_exists(DEAD_LINK_FILE):
+        return ask_for_url()
+    else:
+        response = input("Would you like to delete your history and restart the webcrawler?(Y/n): ")
+        if response is "Y":
+            shutil.rmtree("./dead_link_crawler_files")
+            return ask_for_url()
+    return
+
+
+# Overwrite HOMEPAGE if required
+HOMEPAGE = ask_for_input() or HOMEPAGE
+
+# Create a Spider
 Spider(PROJECT_NAME, HOMEPAGE, DOMAIN_NAME)
 
 
