@@ -6,7 +6,7 @@ from general import *
 import sys
 
 # constants
-PROJECT_NAME = 'dead_link_crawler'
+PROJECT_NAME = 'dead_link_crawler_files'
 HOMEPAGE = input("Enter url: ") or 'http://www.pythonanywhere.com/'
 DOMAIN_NAME = get_domain_name(HOMEPAGE)
 QUEUE_FILE = PROJECT_NAME + '/queue.txt'
