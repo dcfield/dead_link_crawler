@@ -32,3 +32,7 @@ class DomainTest(unittest.TestCase):
 
     def test_getDomainName_withoutSchemeSpecifier_returnEmptyString(self):
         self.assertEqual(domain.get_domain_name('www.google.com'), '')
+
+
+if __name__ == '__main__':
+    unittest.main()
