@@ -1,5 +1,5 @@
+from .. import general
 import unittest
-import general
 
 
 class GeneralTest(unittest.TestCase):

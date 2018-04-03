@@ -1,8 +1,14 @@
+from .. import domain
 import unittest
-import domain
 
 
 class DomainTest(unittest.TestCase):
+
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
 
     # get_sub_domain_name()
     def test_getSubdomainName_withEmptyString_returnEmptyString(self):
