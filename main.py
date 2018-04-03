@@ -1,12 +1,12 @@
 import threading
 from queue import Queue
 from spider import Spider
-from domain import *
 from general import *
 from constants import *
 import shutil
 
 queue = Queue()
+
 
 # Ask user for a URL to crawl
 def ask_for_url():
