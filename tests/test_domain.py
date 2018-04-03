@@ -1,4 +1,4 @@
-from .. import domain
+import domain
 import unittest
 
 

@@ -1,4 +1,4 @@
-from .. import general
+import general
 import unittest
 
 

@@ -1,8 +1,4 @@
-# Python 2 and Python 3 compatible
-try:
-    from urllib.parse import urlparse
-except ImportError as i:
-    from urlparse import urlparse
+from urllib.parse import urlparse
 
 
 # Get domain name (example.com)
