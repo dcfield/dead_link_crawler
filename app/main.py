@@ -1,8 +1,8 @@
 import threading
 from queue import Queue
-from spider import Spider
-from general import *
-from constants import *
+from app.spider import Spider
+from app.general import *
+from app.constants import *
 import shutil
 
 queue = Queue()
@@ -21,9 +21,9 @@ def ask_for_input():
     else:
         response = input("Would you like to delete your history and restart the webcrawler?(Y/n): ")
         if response is "Y":
-            shutil.rmtree("./dead_link_crawler_files")
+            shutil.rmtree(CRAWL_FILE_DIR)
             return ask_for_url()
-    return
+    pass
 
 
 # Overwrite HOMEPAGE if required

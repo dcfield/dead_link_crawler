@@ -1,4 +1,8 @@
 import os
+from app.constants import *
+
+from os.path import dirname, abspath
+d = dirname(dirname(abspath(__file__)))
 
 
 # Each website you crawil is a separate project (folder)
@@ -10,9 +14,9 @@ def create_project_dir(directory):
 
 # Create queue and crawled files (if not created)
 def create_data_files(project_name, base_url):
-    queue = project_name + '/queue.txt'
-    crawled = project_name + '/crawled.txt'
-    dead = project_name + '/dead.txt'
+    queue = QUEUE_FILE
+    crawled = CRAWLED_FILE
+    dead = DEAD_LINK_FILE
 
     if not os.path.isfile(queue):
         write_file(queue, base_url)
@@ -76,6 +80,8 @@ def file_exists(file):
 
 # Sanitize the URL
 def sanitize_url(url):
+    if not url:
+        return
     if url.startswith("http://") or url.startswith("https://"):
         return url
     return "http://" + url

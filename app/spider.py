@@ -1,8 +1,9 @@
 from urllib.request import urlopen
-from link_finder import Linkfinder
-from general import *
-from domain import *
+from app.link_finder import Linkfinder
+from app.general import *
+from app.domain import *
 from urllib import error
+from app.constants import *
 
 
 class Spider:
@@ -23,9 +24,9 @@ class Spider:
         Spider.project_name = project_name
         Spider.base_url = base_url
         Spider.domain_name = domain_name
-        Spider.queue_file = Spider.project_name + '/queue.txt'
-        Spider.crawled_file = Spider.project_name + '/crawled.txt'
-        Spider.dead_file = Spider.project_name + '/dead.txt'
+        Spider.queue_file = QUEUE_FILE
+        Spider.crawled_file = CRAWLED_FILE
+        Spider.dead_file = DEAD_LINK_FILE
 
         self.boot()
         self.crawl_page('First spider', Spider.base_url)
