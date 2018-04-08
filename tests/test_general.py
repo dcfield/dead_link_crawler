@@ -1,4 +1,4 @@
-from app import general
+from venv.app import general
 import unittest
 
 

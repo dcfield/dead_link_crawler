@@ -5,6 +5,7 @@ from app.general import *
 from app.constants import *
 import shutil
 
+
 queue = Queue()
 
 
@@ -28,6 +29,7 @@ def ask_for_input():
 
 # Overwrite HOMEPAGE if required
 HOMEPAGE = ask_for_input() or HOMEPAGE
+DOMAIN_NAME = get_domain_name(HOMEPAGE)
 
 # Create a Spider
 Spider(PROJECT_NAME, HOMEPAGE, DOMAIN_NAME)
