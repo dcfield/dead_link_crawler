@@ -1,5 +1,5 @@
 import os
-from app.constants import *
+from constants import *
 
 from os.path import dirname, abspath
 d = dirname(dirname(abspath(__file__)))

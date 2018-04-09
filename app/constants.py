@@ -1,4 +1,4 @@
-from app.domain import *
+from domain import *
 
 # constants
 PROJECT_NAME = 'dead_link_crawler_files'

@@ -1,8 +1,8 @@
 import threading
 from queue import Queue
-from app.spider import Spider
-from app.general import *
-from app.constants import *
+from spider import Spider
+from general import *
+from constants import *
 import shutil
 
 
@@ -27,9 +27,9 @@ def ask_for_input():
     pass
 
 
-# Overwrite HOMEPAGE if required
 HOMEPAGE = ask_for_input() or HOMEPAGE
 DOMAIN_NAME = get_domain_name(HOMEPAGE)
+
 
 # Create a Spider
 Spider(PROJECT_NAME, HOMEPAGE, DOMAIN_NAME)
