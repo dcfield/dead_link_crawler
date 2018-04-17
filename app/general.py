@@ -1,5 +1,5 @@
 import os
-from constants import *
+import constants
 
 from os.path import dirname, abspath
 d = dirname(dirname(abspath(__file__)))
@@ -14,9 +14,9 @@ def create_project_dir(directory):
 
 # Create queue and crawled files (if not created)
 def create_data_files(project_name, base_url):
-    queue = QUEUE_FILE
-    crawled = CRAWLED_FILE
-    dead = DEAD_LINK_FILE
+    queue = constants.QUEUE_FILE
+    crawled = constants.CRAWLED_FILE
+    dead = constants.DEAD_LINK_FILE
 
     if not os.path.isfile(queue):
         write_file(queue, base_url)

@@ -1,8 +1,9 @@
+import domain
+import general
+import constants
 from urllib.request import urlopen
 from link_finder import Linkfinder
-from general import *
 from urllib import error
-from constants import *
 
 
 class Spider:
@@ -23,20 +24,20 @@ class Spider:
         Spider.project_name = project_name
         Spider.base_url = base_url
         Spider.domain_name = domain_name
-        Spider.queue_file = QUEUE_FILE
-        Spider.crawled_file = CRAWLED_FILE
-        Spider.dead_file = DEAD_LINK_FILE
+        Spider.queue_file = constants.QUEUE_FILE
+        Spider.crawled_file = constants.CRAWLED_FILE
+        Spider.dead_file = constants.DEAD_LINK_FILE
 
         self.boot()
         self.crawl_page('First spider', Spider.base_url)
 
     @staticmethod
     def boot():
-        create_project_dir(Spider.project_name)
-        create_data_files(Spider.project_name, Spider.base_url)
-        Spider.crawled_set = file_to_set(Spider.crawled_file)
-        Spider.queue_set = file_to_set(Spider.queue_file)
-        Spider.dead_set = file_to_set(Spider.dead_file)
+        general.create_project_dir(Spider.project_name)
+        general.create_data_files(Spider.project_name, Spider.base_url)
+        Spider.crawled_set = general.file_to_set(Spider.crawled_file)
+        Spider.queue_set = general.file_to_set(Spider.queue_file)
+        Spider.dead_set = general.file_to_set(Spider.dead_file)
 
     @staticmethod
     def crawl_page(thread_name, page_url):
@@ -95,8 +96,9 @@ class Spider:
             if url in Spider.crawled_set:
                 continue
 
-            # Make sure we don't add a link that points towards a different site
-            if Spider.domain_name != get_domain_name(url):
+            # Make sure we don't add a link that
+            # points towards a different site
+            if Spider.domain_name != domain.get_domain_name(url):
                 continue
 
             # Add to waiting list
@@ -104,6 +106,6 @@ class Spider:
 
     @staticmethod
     def update_files():
-        set_to_file(Spider.queue_set, Spider.queue_file)
-        set_to_file(Spider.crawled_set, Spider.crawled_file)
-        set_to_file(Spider.dead_set, Spider.dead_file)
+        general.set_to_file(Spider.queue_set, Spider.queue_file)
+        general.set_to_file(Spider.crawled_set, Spider.crawled_file)
+        general.set_to_file(Spider.dead_set, Spider.dead_file)

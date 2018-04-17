@@ -1,4 +1,4 @@
-from venv.app import domain
+import app.domain as domain
 import unittest
 
 
