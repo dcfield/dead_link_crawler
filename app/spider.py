@@ -1,9 +1,9 @@
 from urllib.request import urlopen
-from app.link_finder import Linkfinder
-from app.general import *
-from app.domain import *
 from urllib import error
-from app.constants import *
+from link_finder import Linkfinder
+from general import *
+from domain import *
+from constants import *
 
 
 class Spider:

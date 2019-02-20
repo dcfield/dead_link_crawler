@@ -1,8 +1,8 @@
 import threading
 from queue import Queue
-from app.spider import Spider
-from app.general import *
-from app.constants import *
+from spider import Spider
+from general import *
+from constants import *
 import shutil
 
 
@@ -65,7 +65,6 @@ def crawl():
     if len(queued_links) > 0:
         print(str(len(queued_links)) + ' links in the queue')
         create_jobs()
-
 
 create_workers()
 crawl()
