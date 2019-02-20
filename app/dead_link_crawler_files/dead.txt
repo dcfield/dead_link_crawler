@@ -1,2 +1,0 @@
-http://novicecompiler.com/2017/11/09/installing-wamp-from-scratch/
-http://novicecompiler.com/2017/11/23/codeigniter-hmvc-framework-intro/
