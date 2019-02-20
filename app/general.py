@@ -1,9 +1,5 @@
 import os
-<<<<<<< HEAD
-from constants import *
-=======
 import constants
->>>>>>> ed089c1901e184f5b8adc4209ca556ed6aa86aa6
 
 from os.path import dirname, abspath
 d = dirname(dirname(abspath(__file__)))

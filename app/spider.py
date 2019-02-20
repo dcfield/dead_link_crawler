@@ -2,16 +2,11 @@ import domain
 import general
 import constants
 from urllib.request import urlopen
-<<<<<<< HEAD
 from urllib import error
 from link_finder import Linkfinder
 from general import *
 from domain import *
 from constants import *
-=======
-from link_finder import Linkfinder
-from urllib import error
->>>>>>> ed089c1901e184f5b8adc4209ca556ed6aa86aa6
 
 
 class Spider:

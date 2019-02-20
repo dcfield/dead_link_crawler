@@ -1,16 +1,9 @@
 import threading
-<<<<<<< HEAD
-from queue import Queue
-from spider import Spider
-from general import *
-from constants import *
-=======
-import general
-import domain
-import constants
 import queue
 import spider
->>>>>>> ed089c1901e184f5b8adc4209ca556ed6aa86aa6
+import general
+import constants
+import domain
 import shutil
 
 
