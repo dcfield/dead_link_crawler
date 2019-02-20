@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 from app import domain
+=======
+import app.domain as domain
+>>>>>>> ed089c1901e184f5b8adc4209ca556ed6aa86aa6
 import unittest
 
 
