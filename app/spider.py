@@ -4,9 +4,6 @@ import constants
 from urllib.request import urlopen
 from urllib import error
 from link_finder import Linkfinder
-from general import *
-from domain import *
-from constants import *
 
 
 class Spider:
