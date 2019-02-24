@@ -11,4 +11,8 @@ Install the python packages.
 - `python3 ./app/main.py`
 - Enter a website to crawl (Default is [http://www.pythonanywhere.com/])
 - Go for coffee
-- Check `./dead_link_crawler/app/dead_link_crawler_files/dead.txt` for a list of all dead links
+- Check `./dead_link_crawler/dead_link_crawler_files/dead.txt` for a list of all dead links
+
+## Run unit tests
+- `cd app`
+- `python3 -m pytest`
