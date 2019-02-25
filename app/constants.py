@@ -1,7 +1,7 @@
 import domain
 
 # constants
-PROJECT_NAME = '../dead_link_crawler_files'
+PROJECT_NAME = 'dead_link_crawler_files'
 HOMEPAGE = 'http://www.pythonanywhere.com/'
 DOMAIN_NAME = domain.get_domain_name(HOMEPAGE)
 CRAWL_FILE_DIR = PROJECT_NAME
